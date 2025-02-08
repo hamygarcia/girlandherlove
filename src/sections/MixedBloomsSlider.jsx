@@ -11,48 +11,120 @@ const MixedBloomsSlider = () => {
 	const slides = [
 		{
 			id: 1,
-			name: 'Fiona',
+			name: 'Nara',
 			price: '1,850.00',
 			previewImage:
-				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739018129/flower%20bouquet/Astra%201.jpg',
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025561/flower%20bouquet/tyd7ky5x4jcabbtqtngc.jpg',
 			zoomedImage:
-				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739018127/flower%20bouquet/Astra%202.jpg',
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025561/flower%20bouquet/tyd7ky5x4jcabbtqtngc.jpg',
 		},
 		{
 			id: 2,
-			name: 'Harmony',
+			name: 'Ava',
 			price: '1,999.00',
 			previewImage:
-				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739020938/flower%20bouquet/Dried%20Rose%202.jpg',
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025568/flower%20bouquet/mzvo5rbwnccdeup9nuln.jpg',
 			zoomedImage:
-				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739020937/flower%20bouquet/Dried%20Rose%201.jpg',
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025568/flower%20bouquet/mzvo5rbwnccdeup9nuln.jpg',
 		},
 		{
 			id: 3,
-			name: 'Lily',
+			name: 'Mia',
 			price: '1,999.00',
 			previewImage:
-				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739018126/flower%20bouquet/kk8qztfhp9cvdts6afxf.jpg',
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025565/flower%20bouquet/p4hbswriozqwm1lyznu4.jpg',
 			zoomedImage:
-				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739018126/flower%20bouquet/Lily%202.jpg',
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025565/flower%20bouquet/p4hbswriozqwm1lyznu4.jpg',
 		},
 		{
 			id: 4,
-			name: 'Sarah',
+			name: 'Cora',
 			price: '1,999.00',
 			previewImage:
-				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739018129/flower%20bouquet/Sarah%201.jpg',
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025566/flower%20bouquet/gvt1py6p3zjtnio2mhx0.jpg',
 			zoomedImage:
-				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739018127/flower%20bouquet/Sarah%202.jpg',
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025566/flower%20bouquet/gvt1py6p3zjtnio2mhx0.jpg',
 		},
 		{
-			id: 4,
-			name: 'Rosalia',
+			id: 5,
+			name: 'Emerald',
 			price: '1,999.00',
 			previewImage:
-				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739018125/flower%20bouquet/Rosalia%201.jpg',
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025565/flower%20bouquet/vzhtk3qzafdxs8pcfwg9.jpg',
 			zoomedImage:
-				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739018124/flower%20bouquet/Rosalia%202.jpg',
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025565/flower%20bouquet/vzhtk3qzafdxs8pcfwg9.jpg',
+		},
+		{
+			id: 6,
+			name: 'Louise',
+			price: '1,999.00',
+			previewImage:
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025562/flower%20bouquet/ggpzzq54cuxkfjds0p3x.jpg',
+			zoomedImage:
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025562/flower%20bouquet/ggpzzq54cuxkfjds0p3x.jpg',
+		},
+		{
+			id: 7,
+			name: 'Ramia',
+			price: '1,999.00',
+			previewImage:
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025566/flower%20bouquet/gvt1py6p3zjtnio2mhx0.jpg',
+			zoomedImage:
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025566/flower%20bouquet/gvt1py6p3zjtnio2mhx0.jpg',
+		},
+		{
+			id: 8,
+			name: 'Stell',
+			price: '1,999.00',
+			previewImage:
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025565/flower%20bouquet/qo0sbxuhyfvvonlmrtlb.jpg',
+			zoomedImage:
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025565/flower%20bouquet/qo0sbxuhyfvvonlmrtlb.jpg',
+		},
+		{
+			id: 9,
+			name: 'Lucy',
+			price: '1,999.00',
+			previewImage:
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025565/flower%20bouquet/qo0sbxuhyfvvonlmrtlb.jpg',
+			zoomedImage:
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025565/flower%20bouquet/qo0sbxuhyfvvonlmrtlb.jpg',
+		},
+		{
+			id: 10,
+			name: 'Astra',
+			price: '1,999.00',
+			previewImage:
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025565/flower%20bouquet/ikynzewzmrh6uzordsrk.jpg',
+			zoomedImage:
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025565/flower%20bouquet/ikynzewzmrh6uzordsrk.jpg',
+		},
+		{
+			id: 11,
+			name: 'Eleanor',
+			price: '2,199.00',
+			previewImage:
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025567/flower%20bouquet/gckfi5wrn49k1zaneaxd.jpg',
+			zoomedImage:
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025567/flower%20bouquet/gckfi5wrn49k1zaneaxd.jpg',
+		},
+		{
+			id: 12,
+			name: 'Devion',
+			price: '1,650.00',
+			previewImage:
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025561/flower%20bouquet/ej7ovnrgcnzbjv6kiq9q.jpg',
+			zoomedImage:
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025561/flower%20bouquet/ej7ovnrgcnzbjv6kiq9q.jpg',
+		},
+		{
+			id: 13,
+			name: 'Fiona',
+			price: '1,850.00',
+			previewImage:
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025565/flower%20bouquet/o93slqciad5vnkovva6c.jpg',
+			zoomedImage:
+				'https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025565/flower%20bouquet/o93slqciad5vnkovva6c.jpg',
 		},
 	];
 

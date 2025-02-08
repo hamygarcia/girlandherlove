@@ -7,14 +7,23 @@ const DriedFlowersHero = () => {
 			<div className="relative w-full h-[400px] sm:h-[500px] lg:h-[600px] overflow-hidden">
 				<picture>
 					{/* Large screens */}
-					<source media="(min-width: 1024px)" srcSet="dried-flower.avif" />
+					<source
+						media="(min-width: 1024px)"
+						srcSet="https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025123/banner/Dried%20Flower.avif"
+					/>
 					{/* Medium screens */}
-					<source media="(min-width: 768px)" srcSet="dried-flower.avif" />
+					<source
+						media="(min-width: 768px)"
+						srcSet="https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025123/banner/Dried%20Flower.avif"
+					/>
 					{/* Small screens */}
-					<source media="(min-width: 640px)" srcSet="dried-flower.avif" />
+					<source
+						media="(min-width: 640px)"
+						srcSet="https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025123/banner/Dried%20Flower.avif"
+					/>
 					{/* Default/mobile */}
 					<img
-						src="dried-flower.avif"
+						src="https://res.cloudinary.com/dcv5pa6rk/image/upload/v1739025123/banner/Dried%20Flower.avif"
 						alt="Dried flowers arrangement for Valentine's Day"
 						className="w-full h-full object-cover"
 					/>

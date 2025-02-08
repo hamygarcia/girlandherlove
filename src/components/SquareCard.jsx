@@ -5,7 +5,8 @@ export const SquareSlide = ({ products }) => {
 	const [isDragging, setIsDragging] = useState(false);
 	const [startX, setStartX] = useState(0);
 	const [scrollLeft, setScrollLeft] = useState(0);
-	const [selectedImage, setSelectedImage] = useState(null);
+	const [selectedProduct, setSelectedProduct] = useState(null);
+	const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 	const sliderRef = useRef(null);
 
 	const handleMouseDown = (e) => {
@@ -26,15 +27,20 @@ export const SquareSlide = ({ products }) => {
 		sliderRef.current.scrollLeft = scrollLeft - walk;
 	};
 
-	const handleImageClick = (e, product) => {
-		// Only open modal if not dragging
+	const handleProductClick = (e, product) => {
 		if (!isDragging) {
-			setSelectedImage(product);
+			setSelectedProduct(product);
+			setSelectedImageIndex(0);
 		}
 	};
 
 	const closeModal = () => {
-		setSelectedImage(null);
+		setSelectedProduct(null);
+		setSelectedImageIndex(0);
+	};
+
+	const handleThumbnailClick = (index) => {
+		setSelectedImageIndex(index);
 	};
 
 	return (
@@ -52,23 +58,22 @@ export const SquareSlide = ({ products }) => {
 						<div
 							key={product.id}
 							className="snap-start flex-none w-72 bg-white rounded-lg overflow-hidden select-none"
-							onClick={(e) => handleImageClick(e, product)}
+							onClick={(e) => handleProductClick(e, product)}
 						>
 							<div className="aspect-square relative group">
 								<img
-									src={product.image}
+									src={product.images[0]}
 									alt={product.name}
 									className="absolute inset-0 w-full h-full object-cover cursor-pointer"
 									draggable="false"
 								/>
-								{/* Eye icon overlay */}
 								<div className="absolute inset-0 hidden group-hover:flex items-center justify-center bg-black/40 transition-all duration-300">
 									<Eye className="text-white w-8 h-8" />
 								</div>
 							</div>
 							{product.name && (
 								<div className="p-4">
-									<div className="flex justify-between items-start mb-2">
+									<div className="flex justify-between items-start">
 										<h3 className="text-lg font-medium">{product.name}</h3>
 										<button className="text-red-800 hover:bg-red-50 p-2 rounded-full">
 											<svg
@@ -86,16 +91,6 @@ export const SquareSlide = ({ products }) => {
 											</svg>
 										</button>
 									</div>
-									<div className="flex items-baseline gap-2">
-										<span className="text-lg font-semibold">
-											₱{product.price} PHP
-										</span>
-										{product.originalPrice && (
-											<span className="text-sm text-gray-500 line-through">
-												₱{product.originalPrice} PHP
-											</span>
-										)}
-									</div>
 								</div>
 							)}
 						</div>
@@ -103,13 +98,16 @@ export const SquareSlide = ({ products }) => {
 				</div>
 			</div>
 
-			{/* Modal */}
-			{selectedImage && (
+			{/* Modal with Gallery */}
+			{selectedProduct && (
 				<div
 					onClick={closeModal}
-					className="fixed inset-0 bg-black/70 bg-opacity-50 z-50 flex items-center justify-center p-4"
+					className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
 				>
-					<div className="relative bg-white rounded-lg max-w-4xl w-full mx-auto">
+					<div
+						onClick={(e) => e.stopPropagation()}
+						className="relative bg-white rounded-lg max-w-4xl w-full mx-auto"
+					>
 						<button
 							onClick={closeModal}
 							className="absolute right-4 top-4 text-gray-500 hover:text-gray-700 z-10"
@@ -117,25 +115,44 @@ export const SquareSlide = ({ products }) => {
 							<X className="w-6 h-6" />
 						</button>
 						<div className="p-4">
-							<div className="aspect-square relative rounded-lg overflow-hidden">
+							{/* Main Image */}
+							<div className="aspect-square relative rounded-lg overflow-hidden bg-gray-100">
 								<img
-									src={selectedImage.image}
-									alt={selectedImage.name}
-									className="absolute inset-0 w-full h-full object-contain bg-gray-100"
+									src={selectedProduct.images[selectedImageIndex]}
+									alt={`${selectedProduct.name} - Image ${
+										selectedImageIndex + 1
+									}`}
+									className="absolute inset-0 w-full h-full object-contain"
 								/>
 							</div>
-							<div className="mt-4">
-								<h2 className="text-xl font-semibold">{selectedImage.name}</h2>
-								<div className="flex items-baseline gap-2 mt-2">
-									<span className="text-xl font-bold">
-										₱{selectedImage.price} PHP
-									</span>
-									{selectedImage.originalPrice && (
-										<span className="text-gray-500 line-through">
-											₱{selectedImage.originalPrice} PHP
-										</span>
-									)}
+
+							{/* Thumbnail Gallery */}
+							<div className="mt-4 overflow-x-auto">
+								<div className="flex gap-2">
+									{selectedProduct.images.map((image, index) => (
+										<button
+											key={index}
+											onClick={() => handleThumbnailClick(index)}
+											className={`relative flex-none w-20 h-20 m-2 rounded-lg overflow-hidden cursor-pointer ${
+												selectedImageIndex === index
+													? 'ring-2 ring-blue-500'
+													: 'hover:opacity-80'
+											}`}
+										>
+											<img
+												src={image}
+												alt={`${selectedProduct.name} - Thumbnail ${index + 1}`}
+												className="w-full h-full object-cover"
+											/>
+										</button>
+									))}
 								</div>
+							</div>
+
+							<div className="mt-4">
+								<h2 className="text-xl font-semibold">
+									{selectedProduct.name}
+								</h2>
 							</div>
 						</div>
 					</div>

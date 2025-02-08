@@ -13,7 +13,10 @@ export const Hero = () => {
     transform transition-opacity duration-1000
     ${isVisible ? 'opacity-100' : 'opacity-0'}
   `}
-			style={{ backgroundImage: 'url(/banner.jpg)' }}
+			style={{
+				backgroundImage:
+					'url("https://res.cloudinary.com/dcv5pa6rk/image/upload/f_auto,q_auto/v1/banner/Hero%20Banner")',
+			}}
 		>
 			{/* Overlay for better text readability */}
 			<div className="absolute inset-0 bg-black/30" />
