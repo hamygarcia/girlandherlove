@@ -13,7 +13,7 @@ export const Footer = () => {
 					<p className="w-full text-center mb-4">
 						&copy; 2020 Girl and Her Love - Gift Shop
 					</p>
-					<h2 className="text-3xl md:text-4xl font-light text-white mb-8 max-w-2xl md:text-center md:max-w-full">
+					<h2 className="text-3xl md:text-4xl font-light text-white mb-8 max-w-2xl text-center md:max-w-full">
 						LET'S CREATE YOUR OWN GIFT TOGETHER
 					</h2>
 				</div>
